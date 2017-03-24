@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="starter-template">
+        <h1>NMS App</h1>
+        <p class="lead">This is a sample project to demonstrate how everything works together</p>
+    </div>
+
+    <table class="table">
+        <thead>
+        <th>
+            Router name
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+        </thead>
+        <tbody>
+        {% for router in routers %}
+            <tr>
+                <td>
+                    {{ router }}
+                </td>
+                <td>
+                    <a href="/show_config/{{ router }}">Show running config</a>
+                </td>
+                <td>
+                    <a href="/interface_status/{{ router }}">Show interface status</a>
+                </td>
+            </tr>
+
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="starter-template">
+        <h1>NMS App</h1>
+        <p class="lead">Interfaces of {{ router }}</p>
+    </div>
+
+    <table class="table">
+        <thead>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            IP address
+        </th>
+        </thead>
+        <tbody>
+        {% for interface in interfaces['items'] %}
+            <tr>
+                <td>
+                    {{ interface['if-name'] }}
+                </td>
+                <td>
+                    {{ interface['description'] }}
+                </td>
+                <td>
+                    {{ interface['ip-address'] }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
