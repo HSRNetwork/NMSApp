@@ -18,16 +18,16 @@
         </th>
         </thead>
         <tbody>
-        {% for interface in interfaces['items'] %}
+        {% for name, interface in interfaces.items() %}
             <tr>
                 <td>
-                    {{ interface['if-name'] }}
+                    {{ name }}
                 </td>
                 <td>
                     {{ interface['description'] }}
                 </td>
                 <td>
-                    {{ interface['ip-address'] }}
+                    {% for ip in interface['ip'].keys() %}{{ ip }} {% endfor %}
                 </td>
             </tr>
         {% endfor %}
